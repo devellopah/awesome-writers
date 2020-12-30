@@ -1,0 +1,43 @@
+{
+  "name": "blog-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "db.js",
+  "scripts": {
+    "watch": "nodemon db --ignore frontend-js --ignore public & webpack --watch",
+    "inspect": "node inspect db",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.21.0",
+    "bcryptjs": "^2.4.3",
+    "connect-flash": "^0.1.1",
+    "connect-mongo": "^3.2.0",
+    "cors": "^2.8.5",
+    "csurf": "^1.11.0",
+    "dompurify": "^2.2.2",
+    "dotenv": "^8.2.0",
+    "ejs": "^3.1.5",
+    "express": "^4.17.1",
+    "express-session": "^1.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "marked": "^1.2.4",
+    "md5": "^2.3.0",
+    "method-override": "^3.0.0",
+    "mongodb": "^3.6.2",
+    "sanitize-html": "^2.1.2",
+    "socket.io": "^3.0.4",
+    "validator": "^13.1.17"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.7",
+    "@babel/preset-env": "^7.12.7",
+    "babel-loader": "^8.2.1",
+    "nodemon": "^2.0.4",
+    "webpack": "^5.6.0",
+    "webpack-cli": "^4.2.0"
+  }
+}

@@ -1,0 +1,34 @@
+<%- include('../includes/header') %>
+
+<div class="container py-md-5 container--narrow">
+
+  <%- include('../includes/flash') %>
+
+  <h2>
+    <img class="avatar-small" src="<%= avatar %>">
+    <span id="username"><%= username %></span>
+    <% if (user.username !== username) {
+      if (isFollowing) { %>
+      <form class="ml-2 d-inline" action="/unfollow/<%= username %>" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button class="btn btn-danger btn-sm">Unfollow <i class="fas fa-user-times"></i></button>
+      </form>
+      <% } else { %>
+      <form class="ml-2 d-inline" action="/follow/<%= username %>" method="POST">
+        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+        <button class="btn btn-primary btn-sm">Follow <i class="fas fa-user-plus"></i></button>
+      </form>
+      <% }
+    } %>
+  </h2>
+
+  <div class="profile-nav nav nav-tabs pt-2 mb-4">
+    <a href="#" class="profile-nav-link nav-item nav-link active" data-resource="posts" data-url="/users/<%= username %>/posts">Posts: <span id="postsCount"><%= postsCount %></span></a>
+    <a href="#" class="profile-nav-link nav-item nav-link" data-resource="followers" data-url="/users/<%= username %>/followers">Followers: <span id="followersCount"><%= followersCount %></span></a></a>
+    <a href="#" class="profile-nav-link nav-item nav-link" data-resource="following" data-url="/users/<%= username %>/following">Following: <span id="followingCount"><%= followingCount %></span></a></a>
+  </div>
+
+  <div id="profileContent"></div>
+</div>
+
+<%- include('../includes/footer') %>
